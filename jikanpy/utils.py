@@ -64,7 +64,7 @@ def get_search_url(
     parameters: Optional[Mapping[str, Optional[Union[int, str, float]]]],
 ) -> str:
     """Creates the URL for the search endpoint."""
-    url = f"{base_url}/search/{search_type}?q={query}"
+    url = f"{base_url}/{search_type}?q={query}"
     url = get_url_with_page(url, page, delimiter="&page=")
     if parameters is not None:
         url += "".join(f"&{k}={v}" for k, v in parameters.items())
