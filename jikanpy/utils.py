@@ -120,7 +120,7 @@ def get_user_url(
     parameters: Optional[Mapping[str, Any]],
 ) -> str:
     """Creates the URL for the user endpoint."""
-    url = f"{base_url}/user/{username.lower()}"
+    url = f"{base_url}/users/{username.lower()}"
     if request is not None:
         url += f"/{request}"
         if argument is not None:
