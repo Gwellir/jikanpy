@@ -2,100 +2,190 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.18.4]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
     method: GET
-    uri: https://api.jikan.moe/v3/schedule/monday
+    uri: https://api.jikan.moe/v4/schedules?filter=monday
   response:
     body:
-      string: !!binary |
-        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
-        46f/B9LA9o5TQQAA
+      string: '{"pagination":{"last_visible_page":1,"has_next_page":false,"current_page":1,"items":{"count":10,"total":10,"per_page":25}},"data":[{"mal_id":52815,"url":"https:\/\/myanimelist.net\/anime\/52815\/Ganbare_Choushuu-kun","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1592\/127118l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Ganbare!
+        Choushuu-kun"},{"type":"Japanese","title":"\u304c\u3093\u3070\u308c! \u9577\u5dde\u304f\u3093"}],"title":"Ganbare!
+        Choushuu-kun","title_english":null,"title_japanese":"\u304c\u3093\u3070\u308c!
+        \u9577\u5dde\u304f\u3093","title_synonyms":[],"type":"TV","source":"Original","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2022-08-01T00:00:00+00:00","to":null,"prop":{"from":{"day":1,"month":8,"year":2022},"to":{"day":null,"month":null,"year":null}},"string":"Aug
+        1, 2022 to ?"},"duration":"1 min","rating":"G - All Ages","score":null,"scored_by":null,"rank":18791,"popularity":17625,"members":219,"favorites":4,"synopsis":"Choushuu-kun,
+        a rambunctious grade schooler, experiences a slightly strange everyday life
+        with his classmates.\n\n(Source: ANN)","background":null,"season":"summer","year":2022,"broadcast":{"day":"Mondays","time":"10:15","timezone":"Asia\/Tokyo","string":"Mondays
+        at 10:15 (JST)"},"producers":[],"licensors":[],"studios":[{"mal_id":1005,"type":"anime","name":"Oddjob","url":"https:\/\/myanimelist.net\/anime\/producer\/1005\/Oddjob"}],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"}],"explicit_genres":[],"themes":[],"demographics":[]},{"mal_id":38451,"url":"https:\/\/myanimelist.net\/anime\/38451\/Reizouko_no_Tsukenosuke","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1884\/95217l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Reizouko
+        no Tsukenosuke!"},{"type":"Synonym","title":"Reizouko no Tsuke no Suke!"},{"type":"Japanese","title":"\u308c\u3044\u305e\u3046\u3053\u306e\u3064\u3051\u306e\u3059\u3051\uff01"}],"title":"Reizouko
+        no Tsukenosuke!","title_english":null,"title_japanese":"\u308c\u3044\u305e\u3046\u3053\u306e\u3064\u3051\u306e\u3059\u3051\uff01","title_synonyms":["Reizouko
+        no Tsuke no Suke!"],"type":"TV","source":"Original","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2018-10-01T00:00:00+00:00","to":null,"prop":{"from":{"day":1,"month":10,"year":2018},"to":{"day":null,"month":null,"year":null}},"string":"Oct
+        1, 2018 to ?"},"duration":"1 min","rating":"G - All Ages","score":null,"scored_by":null,"rank":15431,"popularity":17123,"members":248,"favorites":0,"synopsis":"A
+        gag anime about foods in a refrigerator. The anime airs within the Oha Suta
+        children''s morning TV program and will receive a simultaneous manga serialization
+        by Kazumata Oguri.","background":null,"season":"fall","year":2018,"broadcast":{"day":"Mondays","time":"07:05","timezone":"Asia\/Tokyo","string":"Mondays
+        at 07:05 (JST)"},"producers":[{"mal_id":62,"type":"anime","name":"Shogakukan-Shueisha
+        Productions","url":"https:\/\/myanimelist.net\/anime\/producer\/62\/Shogakukan-Shueisha_Productions"}],"licensors":[],"studios":[],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"}],"explicit_genres":[],"themes":[{"mal_id":20,"type":"anime","name":"Parody","url":"https:\/\/myanimelist.net\/anime\/genre\/20\/Parody"}],"demographics":[{"mal_id":15,"type":"anime","name":"Kids","url":"https:\/\/myanimelist.net\/anime\/genre\/15\/Kids"}]},{"mal_id":35372,"url":"https:\/\/myanimelist.net\/anime\/35372\/Otoppe","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/4\/85180l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Otoppe"},{"type":"Japanese","title":"\u30aa\u30c8\u30c3\u30da"}],"title":"Otoppe","title_english":null,"title_japanese":"\u30aa\u30c8\u30c3\u30da","title_synonyms":[],"type":"TV","source":"Original","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2017-04-03T00:00:00+00:00","to":null,"prop":{"from":{"day":3,"month":4,"year":2017},"to":{"day":null,"month":null,"year":null}},"string":"Apr
+        3, 2017 to ?"},"duration":"3 min","rating":"G - All Ages","score":null,"scored_by":null,"rank":14979,"popularity":16149,"members":316,"favorites":0,"synopsis":"The
+        series follows a young girl named Shina who hopes to become the world''s best
+        DJ, and is interested in new sounds. Shina explores a mysterious world filled
+        with Otoppe, strange creatures capable of unique sounds.","background":null,"season":"spring","year":2017,"broadcast":{"day":"Mondays","time":"08:40","timezone":"Asia\/Tokyo","string":"Mondays
+        at 08:40 (JST)"},"producers":[{"mal_id":111,"type":"anime","name":"NHK","url":"https:\/\/myanimelist.net\/anime\/producer\/111\/NHK"}],"licensors":[],"studios":[],"genres":[{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"}],"explicit_genres":[],"themes":[{"mal_id":19,"type":"anime","name":"Music","url":"https:\/\/myanimelist.net\/anime\/genre\/19\/Music"}],"demographics":[{"mal_id":15,"type":"anime","name":"Kids","url":"https:\/\/myanimelist.net\/anime\/genre\/15\/Kids"}]},{"mal_id":18941,"url":"https:\/\/myanimelist.net\/anime\/18941\/Shimajirou_no_Wow","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/9\/50737l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Shimajirou
+        no Wow!"},{"type":"Japanese","title":"\u3057\u307e\u3058\u308d\u3046\u306e\u308f\u304a!"}],"title":"Shimajirou
+        no Wow!","title_english":null,"title_japanese":"\u3057\u307e\u3058\u308d\u3046\u306e\u308f\u304a!","title_synonyms":[],"type":"TV","source":"Other","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2012-04-02T00:00:00+00:00","to":null,"prop":{"from":{"day":2,"month":4,"year":2012},"to":{"day":null,"month":null,"year":null}},"string":"Apr
+        2, 2012 to ?"},"duration":"8 min","rating":"G - All Ages","score":null,"scored_by":null,"rank":16020,"popularity":14288,"members":496,"favorites":0,"synopsis":"Fourth
+        season of the Shimajirou children''s television series.","background":null,"season":"spring","year":2012,"broadcast":{"day":"Mondays","time":"07:30","timezone":"Asia\/Tokyo","string":"Mondays
+        at 07:30 (JST)"},"producers":[],"licensors":[],"studios":[{"mal_id":229,"type":"anime","name":"The
+        Answer Studio","url":"https:\/\/myanimelist.net\/anime\/producer\/229\/The_Answer_Studio"}],"genres":[{"mal_id":2,"type":"anime","name":"Adventure","url":"https:\/\/myanimelist.net\/anime\/genre\/2\/Adventure"},{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"},{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"}],"explicit_genres":[],"themes":[],"demographics":[{"mal_id":15,"type":"anime","name":"Kids","url":"https:\/\/myanimelist.net\/anime\/genre\/15\/Kids"}]},{"mal_id":37096,"url":"https:\/\/myanimelist.net\/anime\/37096\/Puzzle___Dragon","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1535\/95070l.webp"}},"trailer":{"youtube_id":"hL5nP9UTJVA","url":"https:\/\/www.youtube.com\/watch?v=hL5nP9UTJVA","embed_url":"https:\/\/www.youtube.com\/embed\/hL5nP9UTJVA?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/hL5nP9UTJVA\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/hL5nP9UTJVA\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/hL5nP9UTJVA\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/hL5nP9UTJVA\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/hL5nP9UTJVA\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Puzzle
+        & Dragon"},{"type":"Synonym","title":"PazuDora"},{"type":"Japanese","title":"\u30d1\u30ba\u30c9\u30e9"},{"type":"English","title":"Puzzle
+        & Dragon"}],"title":"Puzzle & Dragon","title_english":"Puzzle & Dragon","title_japanese":"\u30d1\u30ba\u30c9\u30e9","title_synonyms":["PazuDora"],"type":"TV","source":"Game","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2018-04-02T00:00:00+00:00","to":null,"prop":{"from":{"day":2,"month":4,"year":2018},"to":{"day":null,"month":null,"year":null}},"string":"Apr
+        2, 2018 to ?"},"duration":"24 min","rating":"PG - Children","score":null,"scored_by":null,"rank":15266,"popularity":11346,"members":1339,"favorites":6,"synopsis":"The
+        story is set in modern day Japan following the growth of the protagonist Taiga
+        Akashi, an elementary school kid who wants to be a professional gamer someday.
+        \n\n(Source: Crunchyroll)","background":"The airing time was Mondays 18:25
+        between April 2, 2018 - March 23, 2020 and Saturdays 9:30 between April 4,
+        2020 - September 26, 2020. The airing time is changed to Sundays 18:00 starting
+        October 4, 2020.","season":"spring","year":2018,"broadcast":{"day":"Mondays","time":"18:25","timezone":"Asia\/Tokyo","string":"Mondays
+        at 18:25 (JST)"},"producers":[{"mal_id":2034,"type":"anime","name":"Akatsuki","url":"https:\/\/myanimelist.net\/anime\/producer\/2034\/Akatsuki"}],"licensors":[],"studios":[{"mal_id":1,"type":"anime","name":"Pierrot","url":"https:\/\/myanimelist.net\/anime\/producer\/1\/Pierrot"}],"genres":[],"explicit_genres":[],"themes":[{"mal_id":11,"type":"anime","name":"Strategy
+        Game","url":"https:\/\/myanimelist.net\/anime\/genre\/11\/Strategy_Game"}],"demographics":[{"mal_id":15,"type":"anime","name":"Kids","url":"https:\/\/myanimelist.net\/anime\/genre\/15\/Kids"}]},{"mal_id":51940,"url":"https:\/\/myanimelist.net\/anime\/51940\/Boku_to_Roboko","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1969\/128457l.webp"}},"trailer":{"youtube_id":"QvH5-Lssoe0","url":"https:\/\/www.youtube.com\/watch?v=QvH5-Lssoe0","embed_url":"https:\/\/www.youtube.com\/embed\/QvH5-Lssoe0?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/QvH5-Lssoe0\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/QvH5-Lssoe0\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/QvH5-Lssoe0\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/QvH5-Lssoe0\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/QvH5-Lssoe0\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Boku
+        to Roboko"},{"type":"Synonym","title":"Me & Roboco"},{"type":"Synonym","title":"Me
+        and Roboco"},{"type":"Synonym","title":"Roboco and I"},{"type":"Japanese","title":"\u50d5\u3068\u30ed\u30dc\u30b3"}],"title":"Boku
+        to Roboko","title_english":null,"title_japanese":"\u50d5\u3068\u30ed\u30dc\u30b3","title_synonyms":["Me
+        & Roboco","Me and Roboco","Roboco and I"],"type":"TV","source":"Manga","episodes":null,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2022-12-05T00:00:00+00:00","to":null,"prop":{"from":{"day":5,"month":12,"year":2022},"to":{"day":null,"month":null,"year":null}},"string":"Dec
+        5, 2022 to ?"},"duration":"3 min","rating":"PG-13 - Teens 13 or older","score":6.45,"scored_by":259,"rank":6871,"popularity":9197,"members":2941,"favorites":9,"synopsis":"Robotic
+        OrderMaids are popping up in every household, and 10-year-old Bondo Taira
+        has found out that his two closest friends\u2014Motsuo and Gachi Gorilla\u2014have
+        OrderMaids too. Motsuo, in particular, owns Meico, a beautiful robot that
+        gives excellent massages and serves drinks with a smile. Jealous of his friend,
+        Bondo convinces his mother to get him an OrderMaid, hoping for a similar experience.\n\nHowever,
+        to Bondo''s surprise, the maid that appears outside of his door is incredibly
+        muscular and clumsy enough to destroy a house when completing simple chores.
+        Going by the name Roboko, this new robot is the exact opposite of what Bondo
+        wanted. But despite that, Bondo, together with his friends, learns that there
+        is more to Roboko than they could ever expect. \n\n[Written by MAL Rewrite]","background":null,"season":"winter","year":2023,"broadcast":{"day":"Mondays","time":"00:30","timezone":"Asia\/Tokyo","string":"Mondays
+        at 00:30 (JST)"},"producers":[{"mal_id":1365,"type":"anime","name":"Shueisha","url":"https:\/\/myanimelist.net\/anime\/producer\/1365\/Shueisha"}],"licensors":[],"studios":[{"mal_id":36,"type":"anime","name":"Gallop","url":"https:\/\/myanimelist.net\/anime\/producer\/36\/Gallop"}],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"},{"mal_id":24,"type":"anime","name":"Sci-Fi","url":"https:\/\/myanimelist.net\/anime\/genre\/24\/Sci-Fi"}],"explicit_genres":[],"themes":[{"mal_id":57,"type":"anime","name":"Gag
+        Humor","url":"https:\/\/myanimelist.net\/anime\/genre\/57\/Gag_Humor"}],"demographics":[{"mal_id":27,"type":"anime","name":"Shounen","url":"https:\/\/myanimelist.net\/anime\/genre\/27\/Shounen"}]},{"mal_id":49154,"url":"https:\/\/myanimelist.net\/anime\/49154\/High_Card","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1803\/131345l.webp"}},"trailer":{"youtube_id":"acV8f4Zh8r4","url":"https:\/\/www.youtube.com\/watch?v=acV8f4Zh8r4","embed_url":"https:\/\/www.youtube.com\/embed\/acV8f4Zh8r4?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/acV8f4Zh8r4\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/acV8f4Zh8r4\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/acV8f4Zh8r4\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/acV8f4Zh8r4\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/acV8f4Zh8r4\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"High
+        Card"},{"type":"Japanese","title":"\u30cf\u30a4\u30ab\u30fc\u30c9"}],"title":"High
+        Card","title_english":null,"title_japanese":"\u30cf\u30a4\u30ab\u30fc\u30c9","title_synonyms":[],"type":"TV","source":"Mixed
+        media","episodes":null,"status":"Currently Airing","airing":true,"aired":{"from":"2022-11-19T00:00:00+00:00","to":null,"prop":{"from":{"day":19,"month":11,"year":2022},"to":{"day":null,"month":null,"year":null}},"string":"Nov
+        19, 2022 to ?"},"duration":"Unknown","rating":"R - 17+ (violence & profanity)","score":null,"scored_by":null,"rank":19276,"popularity":5362,"members":12228,"favorites":47,"synopsis":"After
+        discovering that his orphanage was on the brink of closing due to financial
+        stress, Finn, who was living freely on the streets, set out for a casino with
+        the aim of making a fortune. However, nothing could have prepared Finn for
+        the nightmare that was awaiting him. Once there, Finn encountered a car chase
+        and bloody shootout caused by a man''s \"lucky\" card.\n\nFinn will eventually
+        learn what the shootout was about. The world order can be controlled by a
+        set of 52 X-Playing cards with the power to bestow different superhuman powers
+        and abilities to the ones that possess them. With these cards, people can
+        access the hidden power of the \"buddy\" that can be found within themselves.\n\nThere
+        is a secret group of players called High Card, who have been directly ordered
+        by the king of Fourland to collect the cards that have been scattered throughout
+        the kingdom while moonlighting as employees of the luxury carmaker Pinochle.
+        Scouted to become the group''s fifth member, Finn soon joins the players on
+        a dangerous mission to find these cards.\n\n\"All you need in life are manners,
+        dignity, and the will to bet on your own life.\"\n\nHowever, Who''s Who, the
+        rival car maker obsessed with defeating Pinochle, and the Klondikes, the infamous
+        Mafia family, stand in the way of the gang. A frenzied battle amongst these
+        card-obsessed players, fueled by justice, desire, and revenge, is about to
+        begin!\n\nAre you ready? It''s Showdown!!\n\n(Source: TMS Entertainment)\n\nEpisode
+        1 premiered on November 19, 2022 at Anime NYC. Regular broadcasting began
+        on January 9, 2023.","background":null,"season":"fall","year":2022,"broadcast":{"day":"Mondays","time":"20:00","timezone":"Asia\/Tokyo","string":"Mondays
+        at 20:00 (JST)"},"producers":[{"mal_id":73,"type":"anime","name":"TMS Entertainment","url":"https:\/\/myanimelist.net\/anime\/producer\/73\/TMS_Entertainment"},{"mal_id":1696,"type":"anime","name":"Kadokawa","url":"https:\/\/myanimelist.net\/anime\/producer\/1696\/Kadokawa"}],"licensors":[],"studios":[{"mal_id":101,"type":"anime","name":"Studio
+        Hibari","url":"https:\/\/myanimelist.net\/anime\/producer\/101\/Studio_Hibari"}],"genres":[{"mal_id":1,"type":"anime","name":"Action","url":"https:\/\/myanimelist.net\/anime\/genre\/1\/Action"}],"explicit_genres":[],"themes":[{"mal_id":31,"type":"anime","name":"Super
+        Power","url":"https:\/\/myanimelist.net\/anime\/genre\/31\/Super_Power"}],"demographics":[]},{"mal_id":49849,"url":"https:\/\/myanimelist.net\/anime\/49849\/Shinmai_Renkinjutsushi_no_Tenpo_Keiei","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1993\/125560l.webp"}},"trailer":{"youtube_id":"q7iWCME2HLY","url":"https:\/\/www.youtube.com\/watch?v=q7iWCME2HLY","embed_url":"https:\/\/www.youtube.com\/embed\/q7iWCME2HLY?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/q7iWCME2HLY\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/q7iWCME2HLY\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/q7iWCME2HLY\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/q7iWCME2HLY\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/q7iWCME2HLY\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Shinmai
+        Renkinjutsushi no Tenpo Keiei"},{"type":"Japanese","title":"\u65b0\u7c73\u932c\u91d1\u8853\u5e2b\u306e\u5e97\u8217\u7d4c\u55b6"},{"type":"English","title":"Management
+        of a Novice Alchemist"}],"title":"Shinmai Renkinjutsushi no Tenpo Keiei","title_english":"Management
+        of a Novice Alchemist","title_japanese":"\u65b0\u7c73\u932c\u91d1\u8853\u5e2b\u306e\u5e97\u8217\u7d4c\u55b6","title_synonyms":[],"type":"TV","source":"Light
+        novel","episodes":12,"status":"Currently Airing","airing":true,"aired":{"from":"2022-10-03T00:00:00+00:00","to":"2022-12-19T00:00:00+00:00","prop":{"from":{"day":3,"month":10,"year":2022},"to":{"day":19,"month":12,"year":2022}},"string":"Oct
+        3, 2022 to Dec 19, 2022"},"duration":"23 min per ep","rating":"PG-13 - Teens
+        13 or older","score":6.55,"scored_by":6918,"rank":6303,"popularity":3226,"members":37753,"favorites":151,"synopsis":"After
+        her parents are killed by bandits, young Sarasa Feed is sent to an orphanage
+        where she learns about the prestigious world of alchemy. Determined to follow
+        in her late parents'' footsteps and become an independent business owner,
+        she enrolls at the Royal Alchemist Academy to train and get certified as an
+        official alchemist.\n\nFive years later, Sarasa graduates from the institution
+        and nearly achieves her dream before realizing that she lacks the funds to
+        do so. Left with little choice, she makes do with a low-priced storefront
+        in a town situated far away from the bustling capital. Despite the threat
+        of treacherous terrain and dangerous monsters in the remote countryside, Sarasa
+        begins her exciting new life as an alchemist.\n\n[Written by MAL Rewrite]","background":"Shinmai
+        Renkinjutsushi no Tenpo Keiei was released on Blu-ray and DVD in three volumes
+        from December 23, 2022 to February 22, 2023.","season":"fall","year":2022,"broadcast":{"day":"Mondays","time":"21:00","timezone":"Asia\/Tokyo","string":"Mondays
+        at 21:00 (JST)"},"producers":[{"mal_id":238,"type":"anime","name":"AT-X","url":"https:\/\/myanimelist.net\/anime\/producer\/238\/AT-X"},{"mal_id":323,"type":"anime","name":"Nippon
+        Columbia","url":"https:\/\/myanimelist.net\/anime\/producer\/323\/Nippon_Columbia"},{"mal_id":1345,"type":"anime","name":"Sammy","url":"https:\/\/myanimelist.net\/anime\/producer\/1345\/Sammy"},{"mal_id":1696,"type":"anime","name":"Kadokawa","url":"https:\/\/myanimelist.net\/anime\/producer\/1696\/Kadokawa"},{"mal_id":2607,"type":"anime","name":"Kill
+        Time Communication","url":"https:\/\/myanimelist.net\/anime\/producer\/2607\/Kill_Time_Communication"}],"licensors":[{"mal_id":376,"type":"anime","name":"Sentai
+        Filmworks","url":"https:\/\/myanimelist.net\/anime\/producer\/376\/Sentai_Filmworks"}],"studios":[{"mal_id":1974,"type":"anime","name":"ENGI","url":"https:\/\/myanimelist.net\/anime\/producer\/1974\/ENGI"}],"genres":[{"mal_id":2,"type":"anime","name":"Adventure","url":"https:\/\/myanimelist.net\/anime\/genre\/2\/Adventure"},{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"},{"mal_id":36,"type":"anime","name":"Slice
+        of Life","url":"https:\/\/myanimelist.net\/anime\/genre\/36\/Slice_of_Life"}],"explicit_genres":[],"themes":[],"demographics":[]},{"mal_id":50348,"url":"https:\/\/myanimelist.net\/anime\/50348\/Peter_Grill_to_Kenja_no_Jikan__Super_Extra","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1702\/128716l.webp"}},"trailer":{"youtube_id":"txIZFXwTrtY","url":"https:\/\/www.youtube.com\/watch?v=txIZFXwTrtY","embed_url":"https:\/\/www.youtube.com\/embed\/txIZFXwTrtY?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/txIZFXwTrtY\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/txIZFXwTrtY\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/txIZFXwTrtY\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/txIZFXwTrtY\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/txIZFXwTrtY\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Peter
+        Grill to Kenja no Jikan: Super Extra"},{"type":"Synonym","title":"Peter Grill
+        to Kenja no Jikan 2nd Season"},{"type":"Japanese","title":"\u30d4\u30fc\u30bf\u30fc\u30fb\u30b0\u30ea\u30eb\u3068\u8ce2\u8005\u306e\u6642\u9593
+        Super Extra"},{"type":"English","title":"Peter Grill and the Philosopher''s
+        Time: Super Extra"}],"title":"Peter Grill to Kenja no Jikan: Super Extra","title_english":"Peter
+        Grill and the Philosopher''s Time: Super Extra","title_japanese":"\u30d4\u30fc\u30bf\u30fc\u30fb\u30b0\u30ea\u30eb\u3068\u8ce2\u8005\u306e\u6642\u9593
+        Super Extra","title_synonyms":["Peter Grill to Kenja no Jikan 2nd Season"],"type":"TV","source":"Manga","episodes":12,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2022-10-10T00:00:00+00:00","to":null,"prop":{"from":{"day":10,"month":10,"year":2022},"to":{"day":null,"month":null,"year":null}},"string":"Oct
+        10, 2022 to ?"},"duration":"12 min per ep","rating":"R+ - Mild Nudity","score":6.21,"scored_by":4538,"rank":8276,"popularity":3206,"members":38404,"favorites":154,"synopsis":"Second
+        season of Peter Grill to Kenja no Jikan.","background":null,"season":"fall","year":2022,"broadcast":{"day":"Mondays","time":"01:15","timezone":"Asia\/Tokyo","string":"Mondays
+        at 01:15 (JST)"},"producers":[{"mal_id":517,"type":"anime","name":"Asmik Ace","url":"https:\/\/myanimelist.net\/anime\/producer\/517\/Asmik_Ace"},{"mal_id":843,"type":"anime","name":"BS
+        Fuji","url":"https:\/\/myanimelist.net\/anime\/producer\/843\/BS_Fuji"},{"mal_id":1377,"type":"anime","name":"Futabasha","url":"https:\/\/myanimelist.net\/anime\/producer\/1377\/Futabasha"},{"mal_id":1397,"type":"anime","name":"Universal
+        Music Japan","url":"https:\/\/myanimelist.net\/anime\/producer\/1397\/Universal_Music_Japan"},{"mal_id":2233,"type":"anime","name":"Starry
+        Cube","url":"https:\/\/myanimelist.net\/anime\/producer\/2233\/Starry_Cube"},{"mal_id":2236,"type":"anime","name":"CTW","url":"https:\/\/myanimelist.net\/anime\/producer\/2236\/CTW"},{"mal_id":2237,"type":"anime","name":"FUTURE
+        LEAP","url":"https:\/\/myanimelist.net\/anime\/producer\/2237\/FUTURE_LEAP_"}],"licensors":[{"mal_id":376,"type":"anime","name":"Sentai
+        Filmworks","url":"https:\/\/myanimelist.net\/anime\/producer\/376\/Sentai_Filmworks"}],"studios":[{"mal_id":541,"type":"anime","name":"Seven","url":"https:\/\/myanimelist.net\/anime\/producer\/541\/Seven"},{"mal_id":2052,"type":"anime","name":"Wolfsbane","url":"https:\/\/myanimelist.net\/anime\/producer\/2052\/Wolfsbane"}],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"},{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"},{"mal_id":9,"type":"anime","name":"Ecchi","url":"https:\/\/myanimelist.net\/anime\/genre\/9\/Ecchi"}],"explicit_genres":[],"themes":[{"mal_id":35,"type":"anime","name":"Harem","url":"https:\/\/myanimelist.net\/anime\/genre\/35\/Harem"}],"demographics":[]},{"mal_id":50528,"url":"https:\/\/myanimelist.net\/anime\/50528\/Golden_Kamuy_4th_Season","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1855\/128059l.webp"}},"trailer":{"youtube_id":"8usuFOSVV7Y","url":"https:\/\/www.youtube.com\/watch?v=8usuFOSVV7Y","embed_url":"https:\/\/www.youtube.com\/embed\/8usuFOSVV7Y?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/8usuFOSVV7Y\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/8usuFOSVV7Y\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/8usuFOSVV7Y\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/8usuFOSVV7Y\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/8usuFOSVV7Y\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Golden
+        Kamuy 4th Season"},{"type":"Japanese","title":"\u30b4\u30fc\u30eb\u30c7\u30f3\u30ab\u30e0\u30a4"},{"type":"English","title":"Golden
+        Kamuy Season 4"}],"title":"Golden Kamuy 4th Season","title_english":"Golden
+        Kamuy Season 4","title_japanese":"\u30b4\u30fc\u30eb\u30c7\u30f3\u30ab\u30e0\u30a4","title_synonyms":[],"type":"TV","source":"Manga","episodes":13,"status":"Currently
+        Airing","airing":true,"aired":{"from":"2022-10-03T00:00:00+00:00","to":null,"prop":{"from":{"day":3,"month":10,"year":2022},"to":{"day":null,"month":null,"year":null}},"string":"Oct
+        3, 2022 to ?"},"duration":"23 min per ep","rating":"R - 17+ (violence & profanity)","score":8.3,"scored_by":6584,"rank":238,"popularity":2493,"members":61040,"favorites":312,"synopsis":"Fourth
+        season of Golden Kamuy.","background":null,"season":"fall","year":2022,"broadcast":{"day":"Mondays","time":"23:00","timezone":"Asia\/Tokyo","string":"Mondays
+        at 23:00 (JST)"},"producers":[{"mal_id":1113,"type":"anime","name":"NBCUniversal
+        Entertainment Japan","url":"https:\/\/myanimelist.net\/anime\/producer\/1113\/NBCUniversal_Entertainment_Japan"},{"mal_id":1211,"type":"anime","name":"Tokyo
+        MX","url":"https:\/\/myanimelist.net\/anime\/producer\/1211\/Tokyo_MX"},{"mal_id":1261,"type":"anime","name":"Good
+        Smile Company","url":"https:\/\/myanimelist.net\/anime\/producer\/1261\/Good_Smile_Company"},{"mal_id":1345,"type":"anime","name":"Sammy","url":"https:\/\/myanimelist.net\/anime\/producer\/1345\/Sammy"},{"mal_id":1365,"type":"anime","name":"Shueisha","url":"https:\/\/myanimelist.net\/anime\/producer\/1365\/Shueisha"},{"mal_id":1501,"type":"anime","name":"JR
+        East Marketing & Communications","url":"https:\/\/myanimelist.net\/anime\/producer\/1501\/JR_East_Marketing___Communications"},{"mal_id":1747,"type":"anime","name":"Twin
+        Engine","url":"https:\/\/myanimelist.net\/anime\/producer\/1747\/Twin_Engine"}],"licensors":[],"studios":[{"mal_id":112,"type":"anime","name":"Brain''s
+        Base","url":"https:\/\/myanimelist.net\/anime\/producer\/112\/Brains_Base"}],"genres":[{"mal_id":1,"type":"anime","name":"Action","url":"https:\/\/myanimelist.net\/anime\/genre\/1\/Action"},{"mal_id":2,"type":"anime","name":"Adventure","url":"https:\/\/myanimelist.net\/anime\/genre\/2\/Adventure"}],"explicit_genres":[],"themes":[{"mal_id":50,"type":"anime","name":"Adult
+        Cast","url":"https:\/\/myanimelist.net\/anime\/genre\/50\/Adult_Cast"},{"mal_id":13,"type":"anime","name":"Historical","url":"https:\/\/myanimelist.net\/anime\/genre\/13\/Historical"},{"mal_id":38,"type":"anime","name":"Military","url":"https:\/\/myanimelist.net\/anime\/genre\/38\/Military"}],"demographics":[{"mal_id":42,"type":"anime","name":"Seinen","url":"https:\/\/myanimelist.net\/anime\/genre\/42\/Seinen"}]}]}'
     headers:
-      Access-Control-Allow-Methods: ['*']
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: ['no-cache, private']
-      Connection: [keep-alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['4230']
-      Content-Type: [application/json]
-      Date: ['Tue, 04 Sep 2018 04:15:58 GMT']
-      Server: [nginx/1.13.10]
-      Vary: [Accept-Encoding]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - public, s-maxage=86400
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 19 Dec 2022 13:25:52 GMT
+      Expires:
+      - Mon, 19 Dec 2022 19:30:17 GMT
+      Last-Modified:
+      - Sun, 18 Dec 2022 19:30:17 GMT
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - HIT
+      X-Request-Fingerprint:
+      - request:schedules:7a8622dc84ef36a1db419f1f035e5d48af970b59
+      content-length:
+      - '33104'
+    status:
+      code: 200
+      message: OK
 version: 1

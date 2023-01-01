@@ -82,7 +82,7 @@ async def test_anime_success(anime_keys, aio_jikan):
 
 
 @vcr.use_cassette("tests/vcr_cassettes/aio-anime-episodes-success.yaml")
-async def test_anime_episodes_success(anime_episodes_keys, episode_keys, aio_jikan):
+async def test_anime_episodes_success(paginated_answer_keys, episode_keys, aio_jikan):
     anime_episodes_info = await aio_jikan.anime(
         MUSHISHI_ID, extension="episodes", page=1
     )
@@ -91,7 +91,7 @@ async def test_anime_episodes_success(anime_episodes_keys, episode_keys, aio_jik
     assert isinstance(anime_episodes_info["episodes"], list)
     for episode in anime_episodes_info["episodes"]:
         assert episode_keys.issubset(episode.keys())
-    assert anime_episodes_keys.issubset(anime_episodes_info.keys())
+    assert paginated_answer_keys.issubset(anime_episodes_info.keys())
     await aio_jikan.close()
 
 

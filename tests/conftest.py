@@ -104,13 +104,12 @@ def aio_response_non_dict_mock():
 @pytest.fixture
 def anime_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
         "mal_id",
         "url",
-        "image_url",
-        "trailer_url",
+        "images",
+        "trailer",
+        "approved",
+        "titles",
         "title",
         "title_english",
         "title_japanese",
@@ -131,40 +130,39 @@ def anime_keys():
         "favorites",
         "synopsis",
         "background",
-        "premiered",
+        "season",
+        "year",
         "broadcast",
-        "related",
         "producers",
         "licensors",
         "studios",
         "genres",
-        "opening_themes",
-        "ending_themes",
+        "explicit_genres",
+        "themes",
+        "demographics",
     }
 
 
 @pytest.fixture
-def anime_episodes_keys():
+def paginated_answer_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
-        "episodes_last_page",
-        "episodes",
+        "pagination",
+        "data",
     }
 
 
 @pytest.fixture
 def episode_keys():
     return {
-        "episode_id",
+        "mal_id",
+        "url",
         "title",
         "title_japanese",
         "title_romanji",
+        "score",
         "aired",
         "filler",
         "recap",
-        "video_url",
         "forum_url",
     }
 
@@ -172,88 +170,73 @@ def episode_keys():
 @pytest.fixture
 def manga_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
         "mal_id",
         "url",
+        "images",
+        "approved",
+        "titles",
         "title",
         "title_english",
-        "title_synonyms",
         "title_japanese",
-        "status",
-        "image_url",
         "type",
-        "volumes",
         "chapters",
+        "volumes",
+        "status",
         "publishing",
         "published",
-        "rank",
         "score",
         "scored_by",
+        "rank",
         "popularity",
         "members",
         "favorites",
         "synopsis",
         "background",
-        "related",
-        "genres",
         "authors",
         "serializations",
+        "genres",
+        "explicit_genres",
+        "themes",
+        "demographics",
     }
 
 
 @pytest.fixture
 def character_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
         "mal_id",
         "url",
+        "images",
         "name",
         "name_kanji",
         "nicknames",
+        "favorites",
         "about",
-        "member_favorites",
-        "image_url",
-        "animeography",
-        "mangaography",
-        "voice_actors",
     }
 
 
 @pytest.fixture
 def person_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
         "mal_id",
         "url",
-        "image_url",
         "website_url",
+        "images",
         "name",
         "given_name",
         "family_name",
         "alternate_names",
         "birthday",
-        "member_favorites",
+        "favorites",
         "about",
-        "voice_acting_roles",
-        "anime_staff_positions",
-        "published_manga",
     }
 
 
 @pytest.fixture
 def search_keys():
     return {
-        "request_hash",
-        "request_cached",
-        "request_cache_expiry",
-        "results",
-        "last_page",
+        "pagination",
+        "data",
     }
 
 
@@ -440,9 +423,7 @@ def club_keys():
 @pytest.fixture
 def header_keys():
     return {
-        "X-Cache-Status",
-        "X-Request-Hash",
-        "X-Request-Cached",
-        "X-Request-Cache-Ttl",
-        "ETag",
+        "Expires",
+        "Last-Modified",
+        "X-Request-Fingerprint",
     }

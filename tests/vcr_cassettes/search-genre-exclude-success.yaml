@@ -11,56 +11,70 @@ interactions:
       User-Agent:
       - python-requests/2.23.0
     method: GET
-    uri: https://api.jikan.moe/v3/search/anime?q=naruto&genre=1,2&genre_exclude=True&limit=2
+    uri: https://api.jikan.moe/v4/anime?q=naruto&genres_exclude=1,2&limit=10
   response:
     body:
-      string: !!binary |
-        H4sIAAAAAAAAA6WU227TQBCGX2XwLYmzPh8kxE2lIiEQaituCLLW63G8xCf2oBJVfXdmnTSFVkAl
-        pF0nOzM7/2/vZ995Cr9b1KbquO688mFZauRKdGUiklzUBWYCWcRrjiwtkgCzKGmLFtOmbtO0wbj1
-        VudGgosOG69sea/xSbjCH7NUB6+Mo5Ax5rLa9kZ75Zc7b+B9JWljHETxyrOqJzudMbMut5vtZjjw
-        UQ7YS238Ec12syy3G1e93Xzkypqpqq47Oc/WNjhW64dF9X4ap45Xl3xvKX6BI7mVA99h9VRENKP/
-        TGgp1WfBhEaQF4n/bd691W8SliYZYlizQLQRRkGasyiIMaPHkxR5QFpGmh5J52iyhEeTsH5YvIKt
-        d/QJR59bD45OuVRy3J2fpz6M06ylPvcDLbpp6kHPKCTvfTiFpQYOI96CWLLG6RngYwO3HSl3CAOi
-        0XDNtd0jmA4PVMWVgVbuOkOavvN+mJ3162NzCuAs9dQg6QdkRkyK0pkfZLRwm6uGG7eBjjdfs3DN
-        0hvGymW8Xq6uxdi8pGzAoUZFQnEWJAmxQlsID+/T5TqIvPvVIzF5lL8cGCo+8UKzqj7YvVVT5QLV
-        u0l3srrhA6eLcuD8FykBoxmyMDqhkjetKOK6CEWcFEHa5g0mcVMzwRNGf/ApKjRLOPpbDhUWf+D8
-        gfMHi78/83FhXYZOWoG2w0A/3dTLhh+AmyW6U4TDzBWBoSlnNS7NpYNSjnxFAB0mSy0cNfT6ompt
-        f+JtJ1W/OiHECRxqtUPop2nvNIVCbqxCH24cVzW2StKxA9JXACbjxF3Pow6MfEAN0tA7sNzisNw5
-        7YQrkm98/xcSbz7/DmF0pjD1g+cQRmuW0fgXhFRWrMPiLxCGaZHljxBeefdfV17P6cs206F7ZXT/
-        E644611MBQAA
+      string: '{"pagination":{"last_visible_page":1,"has_next_page":false,"current_page":1,"items":{"count":2,"total":2,"per_page":10}},"data":[{"mal_id":19511,"url":"https:\/\/myanimelist.net\/anime\/19511\/Naruto__Shippuuden_-_Sunny_Side_Battle","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/1047\/91638l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Naruto:
+        Shippuuden - Sunny Side Battle"},{"type":"Synonym","title":"Naruto: Shippuuden
+        - Jump Festa 2013 Special"},{"type":"Synonym","title":"Naruto: Shippuuden
+        - Jump Super Anime Tour 2013 Special"},{"type":"Japanese","title":"\u30ca\u30eb\u30c8-NARUTO-\u75be\u98a8\u4f1d
+        \u30b5\u30cb\u30fc\u30fb\u30b5\u30a4\u30c9\u30fb\u30d0\u30c8\u30eb"}],"title":"Naruto:
+        Shippuuden - Sunny Side Battle","title_english":null,"title_japanese":"\u30ca\u30eb\u30c8-NARUTO-\u75be\u98a8\u4f1d
+        \u30b5\u30cb\u30fc\u30fb\u30b5\u30a4\u30c9\u30fb\u30d0\u30c8\u30eb","title_synonyms":["Naruto:
+        Shippuuden - Jump Festa 2013 Special","Naruto: Shippuuden - Jump Super Anime
+        Tour 2013 Special"],"type":"Special","source":"Original","episodes":1,"status":"Finished
+        Airing","airing":false,"aired":{"from":"2013-10-06T00:00:00+00:00","to":null,"prop":{"from":{"day":6,"month":10,"year":2013},"to":{"day":null,"month":null,"year":null}},"string":"Oct
+        6, 2013"},"duration":"11 min","rating":"PG-13 - Teens 13 or older","score":7.55,"scored_by":35936,"rank":1550,"popularity":2384,"members":65650,"favorites":167,"synopsis":"Back
+        at their childhood home, siblings Itachi and Sasuke Uchiha experience an unusual
+        morning together when Itachi becomes obsessed with cooking the perfect fried
+        egg for Sasuke. Despite being completely focused on the task, he continuously
+        fails to achieve the desired result. As Sasuke marvels at his brother''s seemingly
+        unnecessary behavior, he comes to realize that there is more than meets the
+        eye to Itachi''s efforts.\n\n[Written by MAL Rewrite]","background":"Naruto:
+        Shippuuden - Sunny Side Battle is a special short anime that aired during
+        Japan''s 2013 Jump Super Anime Tour between October 6 and November 24. The
+        feature was also included as a bonus in the Naruto Shippuuden: Ultimate Ninja
+        Storm Revolution game, which was released in September 2014 in Japan, Europe,
+        and North America.","season":null,"year":null,"broadcast":{"day":null,"time":null,"timezone":null,"string":null},"producers":[],"licensors":[],"studios":[{"mal_id":1,"type":"anime","name":"Pierrot","url":"https:\/\/myanimelist.net\/anime\/producer\/1\/Pierrot"}],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"},{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"},{"mal_id":47,"type":"anime","name":"Gourmet","url":"https:\/\/myanimelist.net\/anime\/genre\/47\/Gourmet"}],"explicit_genres":[],"themes":[],"demographics":[{"mal_id":27,"type":"anime","name":"Shounen","url":"https:\/\/myanimelist.net\/anime\/genre\/27\/Shounen"}]},{"mal_id":36564,"url":"https:\/\/myanimelist.net\/anime\/36564\/Kamiusagi_Rope_x_Boruto__Naruto_Next_Generations","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/3\/88377l.webp"}},"trailer":{"youtube_id":null,"url":null,"embed_url":null,"images":{"image_url":null,"small_image_url":null,"medium_image_url":null,"large_image_url":null,"maximum_image_url":null}},"approved":true,"titles":[{"type":"Default","title":"Kamiusagi
+        Rope x Boruto: Naruto Next Generations"},{"type":"Synonym","title":"TOHO Cinemas
+        Ueno"},{"type":"Japanese","title":"\u300c\u7d19\u514e\u30ed\u307a\u300d\u00d7\u300cBORUTO-\u30dc\u30eb\u30c8-
+        NARUTO NEXT\u3000GENERATIONS\u300d"}],"title":"Kamiusagi Rope x Boruto: Naruto
+        Next Generations","title_english":null,"title_japanese":"\u300c\u7d19\u514e\u30ed\u307a\u300d\u00d7\u300cBORUTO-\u30dc\u30eb\u30c8-
+        NARUTO NEXT\u3000GENERATIONS\u300d","title_synonyms":["TOHO Cinemas Ueno"],"type":"ONA","source":"Other","episodes":1,"status":"Finished
+        Airing","airing":false,"aired":{"from":"2017-10-12T00:00:00+00:00","to":null,"prop":{"from":{"day":12,"month":10,"year":2017},"to":{"day":null,"month":null,"year":null}},"string":"Oct
+        12, 2017"},"duration":"1 min","rating":"G - All Ages","score":5.52,"scored_by":2169,"rank":11410,"popularity":6519,"members":7567,"favorites":27,"synopsis":"A
+        3-way collaboration between Kamiusagi Rope, Boruto: Naruto Next Generations,
+        and TOHO Cinemas. The purpose is to promote a new TOHO theater opening up
+        in Ueno on November 4, 2017. The collaboration video will also be available
+        to view in TOHO Cinemas in Tokyo, Kanagawa, Chiba, and Saitama from Ocotober
+        21 - December 1.","background":null,"season":null,"year":null,"broadcast":{"day":null,"time":null,"timezone":null,"string":null},"producers":[{"mal_id":245,"type":"anime","name":"Toho","url":"https:\/\/myanimelist.net\/anime\/producer\/245\/Toho"}],"licensors":[],"studios":[],"genres":[{"mal_id":4,"type":"anime","name":"Comedy","url":"https:\/\/myanimelist.net\/anime\/genre\/4\/Comedy"}],"explicit_genres":[],"themes":[],"demographics":[]}]}'
     headers:
       Access-Control-Allow-Methods:
-      - '*'
+      - GET
       Access-Control-Allow-Origin:
       - '*'
       Cache-Control:
       - private, must-revalidate
       Connection:
       - keep-alive
-      Content-Encoding:
-      - gzip
-      Content-Length:
-      - '693'
       Content-Type:
       - application/json
       Date:
-      - Mon, 18 May 2020 03:15:49 GMT
-      ETag:
-      - '"45adb99ff0733980863e5c6bae4ed9b3"'
-      Expires:
-      - Sat, 23 May 2020 03:15:49 GMT
+      - Mon, 19 Dec 2022 11:19:29 GMT
       Server:
-      - Jikan/3.4
+      - nginx/1.18.0 (Ubuntu)
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Accept-Encoding
       X-Cache-Status:
       - MISS
-      X-Request-Cache-Ttl:
-      - '432000'
-      X-Request-Cached:
-      - ''
-      X-Request-Hash:
-      - request:search:5c58cb9e7ce03abae06951e735f9fe6dbf66de4f
+      content-length:
+      - '6087'
+      expires:
+      - '-1'
+      pragma:
+      - no-cache
     status:
       code: 200
       message: OK

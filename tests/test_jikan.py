@@ -25,6 +25,8 @@ from constants import (
     CLUB_ID,
 )
 
+test_vcr = vcr.VCR(decode_compressed_response=True)
+
 
 @pytest.fixture
 def jikan():
@@ -32,14 +34,14 @@ def jikan():
 
 
 def test_strip_base_url():
-    temp_jikan = Jikan("http://localhost:8000/v3/")
-    assert temp_jikan.base == "http://localhost:8000/v3"
+    temp_jikan = Jikan("http://localhost:8000/v4/")
+    assert temp_jikan.base == "http://localhost:8000/v4"
 
-    temp_jikan_2 = Jikan("http://localhost:8000/v3/ ")
-    assert temp_jikan_2.base == "http://localhost:8000/v3"
+    temp_jikan_2 = Jikan("http://localhost:8000/v4/ ")
+    assert temp_jikan_2.base == "http://localhost:8000/v4"
 
 
-@vcr.use_cassette("tests/vcr_cassettes/wrap-response.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/wrap-response.yaml")
 def test_wrap_response(header_keys, jikan):
     anime_info = jikan.anime(MUSHISHI_ID)
     mushishi_url = utils.get_main_url(
@@ -64,144 +66,192 @@ def test_wrap_non_dict_response(jikan, response_non_dict_mock):
     assert wrapped_response["data"] == response_non_dict_mock.json()
 
 
-@vcr.use_cassette("tests/vcr_cassettes/anime-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/anime-success.yaml")
 def test_anime_success(anime_keys, jikan):
     anime_info = jikan.anime(MUSHISHI_ID)
-
     assert isinstance(anime_info, dict)
-    assert anime_info["title"] == "Mushishi"
-    assert anime_keys.issubset(anime_info.keys())
+
+    anime_data = anime_info["data"]
+    assert isinstance(anime_data, dict)
+    assert anime_data["title"] == "Mushishi"
+    assert anime_keys.issubset(anime_data.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/anime-episodes-success.yaml")
-def test_anime_episodes_success(anime_episodes_keys, episode_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/anime-episodes-success.yaml")
+def test_anime_episodes_success(paginated_answer_keys, episode_keys, jikan):
     anime_episodes_info = jikan.anime(MUSHISHI_ID, extension="episodes", page=1)
-
     assert isinstance(anime_episodes_info, dict)
-    assert isinstance(anime_episodes_info["episodes"], list)
-    for episode in anime_episodes_info["episodes"]:
+
+    assert isinstance(anime_episodes_info["data"], list)
+    for episode in anime_episodes_info["data"]:
         assert episode_keys.issubset(episode.keys())
-    assert anime_episodes_keys.issubset(anime_episodes_info.keys())
+    assert paginated_answer_keys.issubset(anime_episodes_info.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/manga-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/manga-success.yaml")
 def test_manga_success(manga_keys, jikan):
     manga_info = jikan.manga(FULLMETAL_ID)
-
     assert isinstance(manga_info, dict)
-    assert manga_info["title"] == "Fullmetal Alchemist"
-    assert manga_keys.issubset(manga_info.keys())
+
+    manga_data = manga_info["data"]
+    assert isinstance(manga_data, dict)
+
+    assert manga_data["title"] == "Fullmetal Alchemist"
+    assert manga_keys.issubset(manga_data.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/character-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/character-success.yaml")
 def test_character_success(character_keys, jikan):
     character_info = jikan.character(GINKO_ID)
-
     assert isinstance(character_info, dict)
-    assert character_info["name"] == "Ginko"
-    assert character_keys.issubset(character_info.keys())
+
+    character_data = character_info.get("data")
+    assert isinstance(character_data, dict)
+
+    assert character_data["name"] == "Ginko"
+    assert character_keys.issubset(character_data.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/person-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/person-success.yaml")
 def test_person_success(person_keys, jikan):
     person_info = jikan.person(KANA_HANAZAWA_ID)
-
     assert isinstance(person_info, dict)
-    assert person_info["name"] == "Kana Hanazawa"
-    assert person_keys.issubset(person_info.keys())
+
+    person_data = person_info.get("data")
+    assert isinstance(person_data, dict)
+
+    assert person_data["name"] == "Kana Hanazawa"
+    assert person_keys.issubset(person_data.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/search-success.yaml")
-def test_search_success(search_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/search-success.yaml")
+def test_search_success(paginated_answer_keys, search_keys, anime_keys, jikan):
     search_info = jikan.search(
         search_type="anime", query="naruto", parameters={"genre": "1,2", "limit": 10}
     )
 
     assert isinstance(search_info, dict)
-    assert search_keys.issubset(search_info.keys())
+    assert paginated_answer_keys.issubset(search_info.keys())
+    assert search_info.get("pagination").get("items").get("per_page") == 10
+
+    search_data = search_info.get("data")
+    assert isinstance(search_data, list)
+    assert len(search_data) > 0
+
+    for search_entry in search_data:
+        assert isinstance(search_entry, dict)
+        assert anime_keys.issubset(search_entry.keys())
+        assert [
+            genre
+            for genre in search_entry.get("genres")
+            if genre.get("mal_id") in [1, 2]
+        ]
+        assert [
+            title
+            for title in search_entry.get("titles")
+            if title.get("title").lower().find("naruto") >= 0
+        ]
 
 
-@vcr.use_cassette("tests/vcr_cassettes/search-genre-exclude-success.yaml")
-def test_search_genre_exclude_success(search_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/search-genre-exclude-success.yaml")
+def test_search_genre_exclude_success(paginated_answer_keys, anime_keys, search_keys, jikan):
     search_info = jikan.search(
         search_type="anime",
         query="naruto",
-        parameters={"genre": "1,2", "genre_exclude": True, "limit": 2},
+        parameters={"genres_exclude": "1,2", "limit": 10},
     )
 
     assert isinstance(search_info, dict)
-    assert search_keys.issubset(search_info.keys())
-    assert (
-        search_info["results"][0]["title"]
-        == 'Naruto: Shippuuden - Shippuu! "Konoha Gakuen" Den'
-    )
-    assert (
-        search_info["results"][1]["title"] == "Narutaru: Mukuro Naru Hoshi Tama Taru Ko"
-    )
+    assert paginated_answer_keys.issubset(search_info.keys())
+
+    search_data = search_info.get("data")
+    assert isinstance(search_data, list)
+    assert len(search_data) > 0
+
+    for search_entry in search_data:
+        assert isinstance(search_entry, dict)
+        assert anime_keys.issubset(search_entry.keys())
+        assert not [
+            genre
+            for genre in search_entry.get("genres")
+            if genre.get("mal_id") in [1, 2]
+        ]
+        assert [
+            title
+            for title in search_entry.get("titles")
+            if title.get("title").lower().find("naruto") >= 0
+        ]
 
 
-@vcr.use_cassette("tests/vcr_cassettes/season-success.yaml")
-def test_season_success(season_keys, seasonal_anime_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/season-success.yaml")
+def test_season_success(paginated_answer_keys, anime_keys, jikan):
     season_info = jikan.season(year=YEAR, season=SEASON)
 
     assert isinstance(season_info, dict)
-    assert season_keys.issubset(season_info.keys())
-    for anime in season_info["anime"]:
-        assert seasonal_anime_keys.issubset(anime.keys())
+    assert paginated_answer_keys.issubset(season_info.keys())
+
+    season_data = season_info.get("data")
+    assert isinstance(season_data, dict)
+
+    for anime in season_data:
+        assert anime_keys.issubset(anime.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/season-archive-success.yaml")
-def test_season_archive_success(season_archive_keys, archived_years_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/season-archive-success.yaml")
+def test_season_archive_success(paginated_answer_keys, archived_years_keys, jikan):
     season_archive_info = jikan.season_archive()
 
     assert isinstance(season_archive_info, dict)
-    assert season_archive_keys.issubset(season_archive_info.keys())
-    for year_info in season_archive_info["archive"]:
+    assert paginated_answer_keys.issubset(season_archive_info.keys())
+    for year_info in season_archive_info["data"]:
         assert archived_years_keys.issubset(year_info.keys())
         assert isinstance(year_info["year"], int)
         assert isinstance(year_info["seasons"], list)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/season-later-success.yaml")
-def test_season_later_success(season_keys, seasonal_anime_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/season-later-success.yaml")
+def test_season_later_success(paginated_answer_keys, anime_keys, jikan):
     season_later_info = jikan.season_later()
 
     assert isinstance(season_later_info, dict)
-    assert season_keys.issubset(season_later_info.keys())
-    for anime in season_later_info["anime"]:
-        assert seasonal_anime_keys.issubset(anime.keys())
+    assert paginated_answer_keys.issubset(season_later_info.keys())
+    for anime in season_later_info["data"]:
+        assert anime_keys.issubset(anime.keys())
 
-@vcr.use_cassette("tests/vcr_cassettes/current-season-success.yaml")
-def test_season_current_success(season_keys, seasonal_anime_keys, jikan):
+
+@test_vcr.use_cassette("tests/vcr_cassettes/current-season-success.yaml")
+def test_season_current_success(paginated_answer_keys, anime_keys, jikan):
     season_info = jikan.season()
 
     assert isinstance(season_info, dict)
-    assert season_keys.issubset(season_info.keys())
-    for anime in season_info["anime"]:
-        assert seasonal_anime_keys.issubset(anime.keys())
+    assert paginated_answer_keys.issubset(season_info.keys())
+    for anime in season_info["data"]:
+        assert anime_keys.issubset(anime.keys())
 
-@vcr.use_cassette("tests/vcr_cassettes/schedule-success.yaml")
-def test_schedule_success(schedule_keys, subset_anime_keys, jikan):
+
+@test_vcr.use_cassette("tests/vcr_cassettes/schedule-success.yaml")
+def test_schedule_success(paginated_answer_keys, anime_keys, jikan):
     schedule_info = jikan.schedule(day=DAY)
 
     assert isinstance(schedule_info, dict)
-    assert schedule_keys.issubset(schedule_info.keys())
-    assert DAY.lower() in schedule_info
-    for anime in schedule_info[DAY]:
-        assert subset_anime_keys.issubset(anime.keys())
+    assert paginated_answer_keys.issubset(schedule_info.keys())
+    for anime in schedule_info["data"]:
+        assert anime_keys.issubset(anime.keys())
+        assert anime.get("broadcast").get("day").lower().startswith(DAY.lower())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/top-success.yaml")
-def test_top_success(top_keys, top_anime_keys, jikan):
+@test_vcr.use_cassette("tests/vcr_cassettes/top-success.yaml")
+def test_top_success(paginated_answer_keys, anime_keys, jikan):
     top_info = jikan.top(type=TYPE, page=1, subtype=SUBTYPE)
 
     assert isinstance(top_info, dict)
-    assert top_keys.issubset(top_info.keys())
-    for anime in top_info["top"]:
-        assert top_anime_keys.issubset(anime.keys())
+    assert paginated_answer_keys.issubset(top_info.keys())
+
+    for anime in top_info["data"]:
+        assert anime_keys.issubset(anime.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/genre-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/genre-success.yaml")
 def test_genre_success(genre_keys, subset_anime_keys, jikan):
     genre_info = jikan.genre(type=TYPE, genre_id=GENRE)
 
@@ -211,7 +261,7 @@ def test_genre_success(genre_keys, subset_anime_keys, jikan):
         assert subset_anime_keys.issubset(anime.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/producer-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/producer-success.yaml")
 def test_producer_success(producer_keys, subset_anime_keys, jikan):
     producer_info = jikan.producer(producer_id=PRODUCER)
 
@@ -221,7 +271,7 @@ def test_producer_success(producer_keys, subset_anime_keys, jikan):
         assert subset_anime_keys.issubset(anime.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/magazine-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/magazine-success.yaml")
 def test_magazine_success(magazine_keys, magazine_manga_keys, jikan):
     magazine_info = jikan.magazine(magazine_id=MAGAZINE)
 
@@ -231,7 +281,7 @@ def test_magazine_success(magazine_keys, magazine_manga_keys, jikan):
         assert magazine_manga_keys.issubset(manga.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/user-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/user-success.yaml")
 def test_user_success(user_keys, jikan):
     user_info = jikan.user(username=USERNAME)
 
@@ -241,7 +291,7 @@ def test_user_success(user_keys, jikan):
     assert user_keys.issubset(user_info.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/animelist-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/animelist-success.yaml")
 def test_animelist_success(animelist_keys, jikan):
     animelist_info = jikan.user(
         username=USERNAME,
@@ -254,7 +304,7 @@ def test_animelist_success(animelist_keys, jikan):
     assert animelist_keys.issubset(animelist_info.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/club-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/club-success.yaml")
 def test_club_success(club_keys, jikan):
     club_info = jikan.club(CLUB_ID)
 
@@ -263,44 +313,44 @@ def test_club_success(club_keys, jikan):
     assert club_keys.issubset(club_info.keys())
 
 
-@vcr.use_cassette("tests/vcr_cassettes/meta-success.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/meta-success.yaml")
 def test_meta_success(jikan):
     meta_info = jikan.meta(request="requests", type="anime", period="today")
 
     assert isinstance(meta_info, dict)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/anime-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/anime-failure.yaml")
 def test_anime_failure(jikan):
     with pytest.raises(APIException):
         jikan.anime(-1)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/manga-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/manga-failure.yaml")
 def test_manga_failure(jikan):
     with pytest.raises(APIException):
         jikan.manga(-1)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/character-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/character-failure.yaml")
 def test_character_failure(jikan):
     with pytest.raises(APIException):
         jikan.character(-1)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/season-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/season-failure.yaml")
 def test_season_failure(jikan):
     with pytest.raises(APIException):
         jikan.season(year=-1, season=SEASON)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/club-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/club-failure.yaml")
 def test_club_failure(jikan):
     with pytest.raises(APIException):
         jikan.club(-1)
 
 
-@vcr.use_cassette("tests/vcr_cassettes/user-list-failure.yaml")
+@test_vcr.use_cassette("tests/vcr_cassettes/user-list-failure.yaml")
 def test_user_list_failure(jikan):
     with pytest.raises(DeprecatedEndpoint):
         jikan.user_list(1)

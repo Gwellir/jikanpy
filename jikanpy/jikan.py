@@ -163,7 +163,7 @@ class Jikan:
         Examples:
             >>> jikan.character(6356)
         """
-        return self._get("character", id, extension)
+        return self._get("characters", id, extension)
 
     def person(self, id: int, extension: Optional[str] = None) -> Dict[str, Any]:
         """Gets information on a person.
@@ -180,7 +180,7 @@ class Jikan:
         Examples:
             >>> jikan.person(2)
         """
-        return self._get("person", id, extension)
+        return self._get("people", id, extension)
 
     def club(
         self, id: int, extension: Optional[str] = None, page: Optional[int] = None

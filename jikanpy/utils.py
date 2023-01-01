@@ -44,7 +44,7 @@ def get_main_url(
     url = f"{base_url}/{endpoint}/{id}"
     if extension is not None:
         url += f"/{extension}"
-        url = get_url_with_page(url, page)
+        url = get_url_with_page(url, page, delimiter="?page=")
     return url
 
 
@@ -76,24 +76,24 @@ def get_season_url(
 ) -> str:
     """Creates the URL for the season endpoint."""
     if year is None or season is None:
-        return f"{base_url}/season"
-    return f"{base_url}/season/{year}/{season.lower()}"
+        return f"{base_url}/seasons/now"
+    return f"{base_url}/seasons/{year}/{season.lower()}"
 
 
 def get_schedule_url(base_url: str, day: Optional[str]) -> str:
     """Creates the URL for the schedule endpoint."""
-    base_schedule_url = f"{base_url}/schedule"
-    return base_schedule_url if day is None else f"{base_schedule_url}/{day.lower()}"
+    base_schedule_url = f"{base_url}/schedules"
+    return base_schedule_url if day is None else f"{base_schedule_url}?filter={day.lower()}"
 
 
 def get_season_archive_url(base_url: str) -> str:
     """Creates the URL for the season archive endpoint."""
-    return f"{base_url}/season/archive"
+    return f"{base_url}/seasons"
 
 
 def get_season_later_url(base_url: str) -> str:
     """Creates the URL for the season later endpoint."""
-    return f"{base_url}/season/later"
+    return f"{base_url}/seasons/upcoming"
 
 
 def get_top_url(
@@ -102,7 +102,7 @@ def get_top_url(
     """Creates the URL for the top endpoint."""
     url = f"{base_url}/top/{type.lower()}"
     url = get_url_with_page(url, page)
-    return url if subtype is None else f"{url}/{subtype.lower()}"
+    return url if subtype is None else f"{url}?type={subtype.lower()}"
 
 
 def get_genre_url(base_url: str, type: str, genre_id: int, page: Optional[int]) -> str:

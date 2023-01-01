@@ -2,70 +2,78 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      User-Agent: [python-requests/2.18.4]
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.23.0
     method: GET
-    uri: https://api.jikan.moe/v3/anime/457
+    uri: https://api.jikan.moe/v4/anime/457
   response:
     body:
-      string: !!binary |
-        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
+      string: '{"data":{"mal_id":457,"url":"https:\/\/myanimelist.net\/anime\/457\/Mushishi","images":{"jpg":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862.jpg","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862t.jpg","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862l.jpg"},"webp":{"image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862.webp","small_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862t.webp","large_image_url":"https:\/\/cdn.myanimelist.net\/images\/anime\/2\/73862l.webp"}},"trailer":{"youtube_id":"h371H0KIuPo","url":"https:\/\/www.youtube.com\/watch?v=h371H0KIuPo","embed_url":"https:\/\/www.youtube.com\/embed\/h371H0KIuPo?enablejsapi=1&wmode=opaque&autoplay=1","images":{"image_url":"https:\/\/img.youtube.com\/vi\/h371H0KIuPo\/default.jpg","small_image_url":"https:\/\/img.youtube.com\/vi\/h371H0KIuPo\/sddefault.jpg","medium_image_url":"https:\/\/img.youtube.com\/vi\/h371H0KIuPo\/mqdefault.jpg","large_image_url":"https:\/\/img.youtube.com\/vi\/h371H0KIuPo\/hqdefault.jpg","maximum_image_url":"https:\/\/img.youtube.com\/vi\/h371H0KIuPo\/maxresdefault.jpg"}},"approved":true,"titles":[{"type":"Default","title":"Mushishi"},{"type":"Japanese","title":"\u87f2\u5e2b"},{"type":"English","title":"Mushi-Shi"},{"type":"German","title":"Mushi-Shi"},{"type":"Spanish","title":"Mushi-Shi"},{"type":"French","title":"Mushi-Shi"}],"title":"Mushishi","title_english":"Mushi-Shi","title_japanese":"\u87f2\u5e2b","title_synonyms":[],"type":"TV","source":"Manga","episodes":26,"status":"Finished
+        Airing","airing":false,"aired":{"from":"2005-10-23T00:00:00+00:00","to":"2006-06-19T00:00:00+00:00","prop":{"from":{"day":23,"month":10,"year":2005},"to":{"day":19,"month":6,"year":2006}},"string":"Oct
+        23, 2005 to Jun 19, 2006"},"duration":"25 min per ep","rating":"PG-13 - Teens
+        13 or older","score":8.67,"scored_by":261473,"rank":59,"popularity":204,"members":768385,"favorites":25364,"synopsis":"\"Mushi\":
+        the most basic forms of life in the world. They exist without any goals or
+        purposes aside from simply \"being.\" They are beyond the shackles of the
+        words \"good\" and \"evil.\" Mushi can exist in countless forms and are capable
+        of mimicking things from the natural world such as plants, diseases, and even
+        phenomena like rainbows.\n\nThis is, however, just a vague definition of these
+        entities that inhabit the vibrant world of Mushishi, as to even call them
+        a form of life would be an oversimplification. Detailed information on Mushi
+        is scarce because the majority of humans are unaware of their existence.\n\nSo
+        what are Mushi and why do they exist? This is the question that a \"Mushishi,\"
+        Ginko, ponders constantly. Mushishi are those who research Mushi in hopes
+        of understanding their place in the world''s hierarchy of life.\n\nGinko chases
+        rumors of occurrences that could be tied to Mushi, all for the sake of finding
+        an answer.\n\nIt could, after all, lead to the meaning of life itself.\n\n[Written
+        by MAL Rewrite]","background":"Mushishi is an adaptation of Yuki Urushibara''s
+        award-winning manga of the same name. The series adapts the first 26 chapters
+        of the manga, adapting one per episode. The anime aired these stories in a
+        different order than that of the manga. The series won the Tokyo Anime Award
+        in the Television category in 2006. The series premiered on October 23, 2005,
+        but went on hiatus on March 12, 2006 after having aired 20 episodes. Broadcast
+        resumed on May 15, and aired the remaining 6 episodes, concluding on June
+        19, 2006.","season":"fall","year":2005,"broadcast":{"day":"Sundays","time":"03:40","timezone":"Asia\/Tokyo","string":"Sundays
+        at 03:40 (JST)"},"producers":[{"mal_id":52,"type":"anime","name":"Avex Entertainment","url":"https:\/\/myanimelist.net\/anime\/producer\/52\/Avex_Entertainment"},{"mal_id":82,"type":"anime","name":"Marvelous","url":"https:\/\/myanimelist.net\/anime\/producer\/82\/Marvelous"},{"mal_id":147,"type":"anime","name":"SKY
+        Perfect Well Think","url":"https:\/\/myanimelist.net\/anime\/producer\/147\/SKY_Perfect_Well_Think"},{"mal_id":711,"type":"anime","name":"Delfi
+        Sound","url":"https:\/\/myanimelist.net\/anime\/producer\/711\/Delfi_Sound"}],"licensors":[{"mal_id":102,"type":"anime","name":"Funimation","url":"https:\/\/myanimelist.net\/anime\/producer\/102\/Funimation"}],"studios":[{"mal_id":8,"type":"anime","name":"Artland","url":"https:\/\/myanimelist.net\/anime\/producer\/8\/Artland"}],"genres":[{"mal_id":2,"type":"anime","name":"Adventure","url":"https:\/\/myanimelist.net\/anime\/genre\/2\/Adventure"},{"mal_id":10,"type":"anime","name":"Fantasy","url":"https:\/\/myanimelist.net\/anime\/genre\/10\/Fantasy"},{"mal_id":7,"type":"anime","name":"Mystery","url":"https:\/\/myanimelist.net\/anime\/genre\/7\/Mystery"},{"mal_id":36,"type":"anime","name":"Slice
+        of Life","url":"https:\/\/myanimelist.net\/anime\/genre\/36\/Slice_of_Life"},{"mal_id":37,"type":"anime","name":"Supernatural","url":"https:\/\/myanimelist.net\/anime\/genre\/37\/Supernatural"}],"explicit_genres":[],"themes":[{"mal_id":50,"type":"anime","name":"Adult
+        Cast","url":"https:\/\/myanimelist.net\/anime\/genre\/50\/Adult_Cast"},{"mal_id":13,"type":"anime","name":"Historical","url":"https:\/\/myanimelist.net\/anime\/genre\/13\/Historical"},{"mal_id":63,"type":"anime","name":"Iyashikei","url":"https:\/\/myanimelist.net\/anime\/genre\/63\/Iyashikei"}],"demographics":[{"mal_id":42,"type":"anime","name":"Seinen","url":"https:\/\/myanimelist.net\/anime\/genre\/42\/Seinen"}]}}'
     headers:
-      Access-Control-Allow-Methods: ['*']
-      Access-Control-Allow-Origin: ['*']
-      Cache-Control: ['no-cache, private']
-      Connection: [keep-alive]
-      Content-Encoding: [gzip]
-      Content-Length: ['2554']
-      Content-Type: [application/json]
-      Date: ['Tue, 04 Sep 2018 04:15:54 GMT']
-      Server: [nginx/1.13.10]
-      Vary: [Accept-Encoding]
-    status: {code: 200, message: OK}
+      Access-Control-Allow-Methods:
+      - GET
+      Access-Control-Allow-Origin:
+      - '*'
+      Cache-Control:
+      - public, s-maxage=86400
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Sun, 18 Dec 2022 22:36:33 GMT
+      Expires:
+      - Mon, 19 Dec 2022 08:07:24 GMT
+      Last-Modified:
+      - Sun, 18 Dec 2022 08:07:24 GMT
+      Server:
+      - nginx/1.18.0 (Ubuntu)
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Accept-Encoding
+      X-Cache-Status:
+      - HIT
+      X-Request-Fingerprint:
+      - request:anime:b4785d63f3bebc9281dfe6b2b3173ee064ae32ba
+      content-length:
+      - '5527'
+    status:
+      code: 200
+      message: OK
 version: 1
