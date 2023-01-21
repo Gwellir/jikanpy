@@ -72,12 +72,22 @@ def get_search_url(
 
 
 def get_season_url(
-    base_url: str, year: Optional[int] = None, season: Optional[str] = None
+    base_url: str,
+    year: Optional[int] = None,
+    season: Optional[str] = None,
+    upcoming: Optional[bool] = False,
+    page: Optional[int] = None,
 ) -> str:
     """Creates the URL for the season endpoint."""
-    if year is None or season is None:
-        return f"{base_url}/seasons/now"
-    return f"{base_url}/seasons/{year}/{season.lower()}"
+    if upcoming:
+        url = get_season_later_url(base_url)
+    elif year is None or season is None:
+        url = f"{base_url}/seasons/now"
+    else:
+        url = f"{base_url}/seasons/{year}/{season.lower()}"
+    if page:
+        url = f"{url}?page={page}"
+    return url
 
 
 def get_schedule_url(base_url: str, day: Optional[str]) -> str:

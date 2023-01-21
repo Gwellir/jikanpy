@@ -4,6 +4,7 @@ jikan.py contains the Jikan class, a synchronous Jikan wrapper.
 """
 
 import json
+from time import sleep
 from typing import Optional, Dict, Mapping, Union, Any
 
 import requests
@@ -81,6 +82,7 @@ class Jikan:
     def _request(self, url: str, **kwargs: Union[int, Optional[str]]) -> Dict[str, Any]:
         """Makes a request to the Jikan API given the url and wraps the response."""
         response = self.session.get(url)
+        sleep(1)
         return self._wrap_response(response, url, **kwargs)
 
     def _get(
@@ -242,7 +244,11 @@ class Jikan:
         return self._request(url, **kwargs)
 
     def season(
-        self, year: Optional[int] = None, season: Optional[str] = None
+        self,
+        year: Optional[int] = None,
+        season: Optional[str] = None,
+        upcoming: Optional[bool] = False,
+        page: Optional[int] = None,
     ) -> Dict[str, Any]:
         """Gets information on anime of the specific season or the current seasaon if
             no parameters are specified.
@@ -251,6 +257,8 @@ class Jikan:
             year (:obj:`int`, optional): Year to get anime of. Defaults to None.
             season (:obj:`str`, optional): Season to get anime of. Possible values are
                 winter, spring, summer, and fall. Defaults to None.
+            upcoming (:obj:`bool`, optional): Whether we should request all upcoming anime
+            page (:obj:`int`, optional): Page number in backend pagination
 
         Returns:
             Dict: Dictionary containing information on anime of the season.
@@ -260,7 +268,13 @@ class Jikan:
             >>> jikan.season(year=2018, season='winter')
             >>> jikan.season(year=2016, season='spring')
         """
-        url = utils.get_season_url(self.base, year, season)
+        url = utils.get_season_url(
+            self.base,
+            year=year,
+            season=season,
+            upcoming=upcoming,
+            page=page,
+        )
         return self._request(url, year=year, season=season)
 
     def season_archive(self) -> Dict[str, Any]:
